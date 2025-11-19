@@ -194,7 +194,6 @@ public class BaseApi {
         try {
             preProcess(req);
             HttpResponse<String> httpResponse = doProcess(req);
-            System.out.println("resp: " + httpResponse.body());
             return postProcess(httpResponse.body(), req, respClass);
         } catch (Exception e) {
             throw new RuntimeException(e);
