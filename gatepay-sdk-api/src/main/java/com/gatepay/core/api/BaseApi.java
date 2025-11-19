@@ -16,8 +16,10 @@ import com.gatepay.common.model.resp.SpecResp;
 import com.gatepay.common.utils.RandomUtils;
 import com.gatepay.common.utils.StringUtils;
 import com.gatepay.core.api.withdraw.model.req.QueryBalanceReq;
+import com.gatepay.core.api.withdraw.model.req.QueryChainsReq;
 import com.gatepay.core.api.withdraw.model.req.QueryStatusReq;
 import com.gatepay.core.api.withdraw.model.resp.QueryBalanceResp;
+import com.gatepay.core.api.withdraw.model.resp.QueryChainsResp;
 import com.gatepay.core.api.withdraw.model.resp.QueryStatusResp;
 import com.gatepay.infrastructure.GatePayConfig;
 import com.gatepay.infrastructure.GatePayHttpClient;
@@ -149,6 +151,14 @@ public class BaseApi {
                 resp.setCode(Code.SUCCESS.getCode());
                 resp.setStatus(Status.SUCCESS.name());
                 resp.setData(queryStatusResps);
+                return resp;
+            }
+            if (req instanceof QueryChainsReq) {
+                QueryChainsResp[] queryChainsResps = new ObjectMapper().readValue(json, QueryChainsResp[].class);
+                Resp resp = respClass.getDeclaredConstructor().newInstance();
+                resp.setCode(Code.SUCCESS.getCode());
+                resp.setStatus(Status.SUCCESS.name());
+                resp.setData(queryChainsResps);
                 return resp;
             }
         } catch (Exception e) {

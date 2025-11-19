@@ -12,7 +12,7 @@ import com.gatepay.common.BaseResponse;
  * @Author: ZJ-BE
  * @Date: 2025/07/25
  */
-public class QueryChainsResp extends BaseResponse<QueryChainsResp> {
+public class QueryChainsResp extends BaseResponse<QueryChainsResp[]> {
 
     /**
      * 区块链网络名称（如ERC20、TRC20、BEP20等）
