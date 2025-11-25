@@ -49,6 +49,11 @@ public enum GatePayApi {
     CONVERT_CREATE_ORDER("/v1/pay/convert", "POST"),
     CONVERT_QUERY_ORDER("/v1/pay/convert/order", "GET"),
     BILL_QUERY_ORDERS("/v1/pay/bill/orderlist", "GET"),
+
+    PAYMENT_QUERY_ORDER_V2("/v2/pay/order/query", "GET"),
+    PAYMENT_QUERY_REFUND_SUPPORT_CHAINS_V2("/v2/refund/support/chains", "GET"),
+    PAYMENT_CREATE_REFUND_V2("/v2/standard/order/refund", "POST"),
+    PAYMENT_QUERY_REFUND_V2("/v2/pay/refund/details", "GET"),
     ;
 
 
