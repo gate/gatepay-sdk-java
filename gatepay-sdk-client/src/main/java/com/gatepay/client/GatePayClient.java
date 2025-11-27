@@ -42,6 +42,14 @@ import com.gatepay.core.api.gift.model.resp.CreateResp;
 import com.gatepay.core.api.gift.model.resp.ListTempResp;
 import com.gatepay.core.api.gift.model.resp.QueryResp;
 import com.gatepay.core.api.payment.ApiPayment;
+import com.gatepay.core.api.payment.model.v2.req.CreateRefundReqV2;
+import com.gatepay.core.api.payment.model.v2.req.QueryOrderReqV2;
+import com.gatepay.core.api.payment.model.v2.req.QueryRefundReqV2;
+import com.gatepay.core.api.payment.model.v2.req.QueryRefundSupportChainsReq;
+import com.gatepay.core.api.payment.model.v2.resp.CreateRefundRespV2;
+import com.gatepay.core.api.payment.model.v2.resp.QueryOrderRespV2;
+import com.gatepay.core.api.payment.model.v2.resp.QueryRefundRespV2;
+import com.gatepay.core.api.payment.model.v2.resp.QueryRefundSupportChainsResp;
 import com.gatepay.core.api.qrcode.ApiQrCode;
 import com.gatepay.core.api.payment.model.req.*;
 import com.gatepay.core.api.payment.model.resp.*;
@@ -458,6 +466,43 @@ public class GatePayClient {
      */
     public GatePayResp<QueryStatusResp> queryWithdrawStatus(QueryStatusReq request) {
         return new GatePayResp<>(this.apiWithdraw.queryStatus(request));
+    }
+
+    /**
+     * 查询订单 V3
+     * 所有支付方式统一
+     * @param request
+     * @return GatePayResp<com.gatepay.core.api.payment.model.v3.resp.QueryOrderRespV2>
+     */
+    public GatePayResp<QueryOrderRespV2> queryOrder(QueryOrderReqV2 request) {
+        return new GatePayResp<>(this.apiPayment.queryOrderV2(request));
+    }
+
+    /**
+     * 退款到 Web3 时，查询指定币种，支持的网络以及费率信息.
+     * @param request
+     * @return
+     */
+    public GatePayResp<QueryRefundSupportChainsResp> queryRefundSupportChains(QueryRefundSupportChainsReq request) {
+        return new GatePayResp<>(this.apiPayment.queryRefundSupportChains(request));
+    }
+
+    /**
+     * 退款: 支持退款到Gate账户和Web3. V2
+     * @param request
+     * @return
+     */
+    public GatePayResp<CreateRefundRespV2> createRefundV2(CreateRefundReqV2 request) {
+        return new GatePayResp<>(this.apiPayment.createRefundV2(request));
+    }
+
+    /**
+     * 退款订单详情查询. V2
+     * @param request
+     * @return
+     */
+    public GatePayResp<QueryRefundRespV2> queryRefundV2(QueryRefundReqV2 request) {
+        return new GatePayResp<>(this.apiPayment.queryRefundV2(request));
     }
 
 
