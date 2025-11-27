@@ -5,6 +5,7 @@
 package com.gatepay.core.api;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.BaseResponse;
@@ -38,6 +39,8 @@ import java.net.http.HttpResponse;
  */
 public class BaseApi {
 
+    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+
     /**
      * gatePay http客户端
      */
@@ -45,6 +48,11 @@ public class BaseApi {
 
     public BaseApi(GatePayConfig gatePayConfig) {
         this.gatePayHttpClient = new GatePayHttpClient(gatePayConfig);
+    }
+
+
+    static {
+        OBJECT_MAPPER.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 
 
@@ -125,7 +133,7 @@ public class BaseApi {
             if (failResp != null) {
                 return failResp;
             }
-            return new ObjectMapper().readValue(json, respClass);
+            return OBJECT_MAPPER.readValue(json, respClass);
         } catch (Exception e) {
             Resp resp = respClass.getDeclaredConstructor().newInstance();
             resp.setCode(Code.FAIL.getCode());

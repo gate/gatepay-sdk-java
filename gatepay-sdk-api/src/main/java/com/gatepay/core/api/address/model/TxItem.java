@@ -18,6 +18,7 @@ public class TxItem {
     private String txId;
     private String utcCreateTime;
     private String utcUpdateTime;
+    private String fromAddress;
 
 
     public String getChain() {
@@ -74,5 +75,13 @@ public class TxItem {
 
     public void setUtcUpdateTime(String utcUpdateTime) {
         this.utcUpdateTime = utcUpdateTime;
+    }
+
+    public String getFromAddress() {
+        return fromAddress;
+    }
+
+    public void setFromAddress(String fromAddress) {
+        this.fromAddress = fromAddress;
     }
 }
