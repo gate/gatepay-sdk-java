@@ -11,10 +11,10 @@ GatePay API官方JAVA语言客户端代码库。
 # 下载和使用
 
 1. 下载地址:
-https://github.com/gatepay2025/gatepay-sdk-java
+[https://github.com/gatepay2025/gatepay-sdk-java](https://github.com/gate/gatepay-sdk-java)
 
 2. 您也可以使用以下命令获取安装包，代码会被下载到您本地的目录中。
-git clone https://github.com/gatepay2025/gatepay-sdk-java
+git clone https://github.com/gate/gatepay-sdk-java
 
 # 调用SDK
 
