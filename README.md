@@ -41,3 +41,20 @@ GatePayConfig gatePayConfig = new GatePayConfig(GatePayConstants.END_POINT_DEFAU
 GatePayClient gatePayClient = new GatePayClient(gatePayConfig);
 gatePayClient.getAddressChains(chainsReq);
 ```
+
+# 调用参数
+
+```
+收银台：https://www.gate.com/docs/gatepay/checkout_payment/zh_CN/
+客户管理：https://www.gate.com/docs/gatepay/channel_manage/zh_CN/
+下发：https://www.gate.com/docs/gatepay/withdraw/zh_CN/
+地址支付：https://www.gate.com/docs/gatepay/address_payment/zh_CN/
+调起支付：https://www.gate.com/docs/gatepay/call_payment/zh_CN/
+扫码支付：https://www.gate.com/docs/gatepay/qr_code/zh_CN/
+web支付：https://www.gate.com/docs/gatepay/web_payment/zh_CN/
+礼品卡：https://www.gate.com/docs/gatepay/gift_card/zh_CN/
+支付账户闪兑：https://www.gate.com/docs/gatepay/convert/zh_CN/
+资金流水：https://www.gate.com/docs/gatepay/order_bill/zh_CN/
+付款按钮：https://www.gate.com/docs/gatepay/payment_buttons/zh_CN/
+汇率查询：https://www.gate.com/docs/gatepay/query_exchange_rate/zh_CN/
+```
