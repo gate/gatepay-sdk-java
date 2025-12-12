@@ -7,6 +7,8 @@ package com.gatepay.core.api.withdraw.model.resp;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseResponse;
 
+import java.util.Map;
+
 /**
  * @Description 查询状态响应
  * @Author ZJ-BE
@@ -41,14 +43,14 @@ public class QueryStatusResp extends BaseResponse<QueryStatusResp[]> {
     private String withdrawEachtimeLimit;
 
     @JsonProperty("withdraw_fix_on_chains")
-    private WithdrawFixOnChains withdrawFixOnChains;
+    private Map<String, String> withdrawFixOnChains;
 
     @JsonProperty("withdraw_percent_on_chains")
-    private WithdrawPercentOnChains withdrawPercentOnChains;
+    private Map<String, String> withdrawPercentOnChains;
 
 
 
-    public static class WithdrawFixOnChains {
+    /*public static class WithdrawFixOnChains {
         @JsonProperty("ALGO")
         private String ALGO;
 
@@ -269,10 +271,10 @@ public class QueryStatusResp extends BaseResponse<QueryStatusResp[]> {
         public void setXTZ(String XTZ) {
             this.XTZ = XTZ;
         }
-    }
+    }*/
 
 
-    public static class WithdrawPercentOnChains {
+    /*public static class WithdrawPercentOnChains {
 
         @JsonProperty("ALGO")
         private String ALGO;
@@ -494,7 +496,7 @@ public class QueryStatusResp extends BaseResponse<QueryStatusResp[]> {
         public void setXTZ(String XTZ) {
             this.XTZ = XTZ;
         }
-    }
+    }*/
 
 
     public String getCurrency() {
@@ -577,7 +579,7 @@ public class QueryStatusResp extends BaseResponse<QueryStatusResp[]> {
         this.withdrawEachtimeLimit = withdrawEachtimeLimit;
     }
 
-    public WithdrawFixOnChains getWithdrawFixOnChains() {
+    /*public WithdrawFixOnChains getWithdrawFixOnChains() {
         return withdrawFixOnChains;
     }
 
@@ -591,6 +593,6 @@ public class QueryStatusResp extends BaseResponse<QueryStatusResp[]> {
 
     public void setWithdrawPercentOnChains(WithdrawPercentOnChains withdrawPercentOnChains) {
         this.withdrawPercentOnChains = withdrawPercentOnChains;
-    }
+    }*/
 
 }
