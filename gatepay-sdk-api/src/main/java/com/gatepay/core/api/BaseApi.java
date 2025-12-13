@@ -115,7 +115,7 @@ public class BaseApi {
         if (existGatePayRespData) {
             SpecResp<Resp> specResp = new SpecResp();
             specResp.setData(respClass.getDeclaredConstructor().newInstance());
-            SpecResp returnSpecResp = new ObjectMapper().readValue(json, specResp.getClass());
+            SpecResp returnSpecResp = OBJECT_MAPPER.readValue(json, specResp.getClass());
             Resp resp = respClass.getDeclaredConstructor().newInstance();
             resp.setCode(returnSpecResp.getCode());
             resp.setStatus(returnSpecResp.getStatus());
@@ -138,7 +138,7 @@ public class BaseApi {
             Resp resp = respClass.getDeclaredConstructor().newInstance();
             resp.setCode(Code.FAIL.getCode());
             resp.setStatus(Status.FAIL.name());
-            resp.setErrorMessage(new ObjectMapper().writeValueAsString(json));
+            resp.setErrorMessage(OBJECT_MAPPER.writeValueAsString(json));
             return resp;
         }
     }
@@ -146,7 +146,7 @@ public class BaseApi {
     private <Req extends BaseRequest, Resp extends BaseResponse> Resp postProcessAbnormal(String json, Req req, Class<Resp> respClass) throws JsonProcessingException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         try {
             if (req instanceof QueryBalanceReq) {
-                QueryBalanceResp queryBalanceResp = new ObjectMapper().readValue(json, QueryBalanceResp.class);
+                QueryBalanceResp queryBalanceResp = OBJECT_MAPPER.readValue(json, QueryBalanceResp.class);
                 Resp resp = respClass.getDeclaredConstructor().newInstance();
                 resp.setCode(Code.SUCCESS.getCode());
                 resp.setStatus(Status.SUCCESS.name());
@@ -154,7 +154,7 @@ public class BaseApi {
                 return resp;
             }
             if (req instanceof QueryStatusReq) {
-                QueryStatusResp[] queryStatusResps = new ObjectMapper().readValue(json, QueryStatusResp[].class);
+                QueryStatusResp[] queryStatusResps = OBJECT_MAPPER.readValue(json, QueryStatusResp[].class);
                 Resp resp = respClass.getDeclaredConstructor().newInstance();
                 resp.setCode(Code.SUCCESS.getCode());
                 resp.setStatus(Status.SUCCESS.name());
@@ -162,7 +162,7 @@ public class BaseApi {
                 return resp;
             }
             if (req instanceof QueryChainsReq) {
-                QueryChainsResp[] queryChainsResps = new ObjectMapper().readValue(json, QueryChainsResp[].class);
+                QueryChainsResp[] queryChainsResps = OBJECT_MAPPER.readValue(json, QueryChainsResp[].class);
                 Resp resp = respClass.getDeclaredConstructor().newInstance();
                 resp.setCode(Code.SUCCESS.getCode());
                 resp.setStatus(Status.SUCCESS.name());
@@ -176,13 +176,13 @@ public class BaseApi {
     }
 
     private <Req extends BaseRequest, Resp extends BaseResponse> Resp postProcessFail(String json, Class<Resp> respClass) throws JsonProcessingException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
-        BaseResponse baseResponse = new ObjectMapper().readValue(json, BaseResponse.class);
+        BaseResponse baseResponse = OBJECT_MAPPER.readValue(json, BaseResponse.class);
         if (Status.FAIL.name().equals(baseResponse.getStatus())) {
             Resp resp = respClass.getDeclaredConstructor().newInstance();
             resp.setCode(baseResponse.getCode());
             resp.setStatus(baseResponse.getStatus());
             resp.setLabel(baseResponse.getLabel());
-            resp.setErrorMessage(baseResponse.getErrorMessage() + ". " + new ObjectMapper().writeValueAsString(baseResponse.getData()));
+            resp.setErrorMessage(baseResponse.getErrorMessage() + ". " + OBJECT_MAPPER.writeValueAsString(baseResponse.getData()));
             return resp;
         }
         return null;
