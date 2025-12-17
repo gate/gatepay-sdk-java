@@ -3,6 +3,8 @@ package com.gatepay.core.api.payment.model.v2.resp;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseResponse;
 
+import java.util.List;
+
 /**
  * 退款查询响应 V3
  *
@@ -115,6 +117,15 @@ public class QueryRefundRespV2 extends BaseResponse<QueryRefundRespV2> {
     // 付款地址
     private String fromAddress;
 
+    // 退款详情列表
+    private List<RefundDetailItem> refundDetails;
+
+    // 支付渠道
+    private String payChannel;
+
+    // 账单类型
+    private int billType;
+
     // 商品名称
     private String goodsName;
 
@@ -129,6 +140,129 @@ public class QueryRefundRespV2 extends BaseResponse<QueryRefundRespV2> {
 
     // 订单维度-实际到账订单币种
     private String totalReceiveCurrency;
+
+    public static class RefundDetailItem {
+        // 支付流水订单号
+        private String transactionId;
+
+        // 支付时间
+        private long transactTime;
+
+        // 支付渠道，用于判断支付方式
+        private String payChannel;
+
+        // 支付状态
+        private String status;
+
+        // 退款金额
+        private String amount;
+
+        // 退款币种
+        private String currency;
+
+        // 网络币种
+        private String chain;
+
+        // 商户收款地址
+        private String address;
+
+        // 交易hash
+        private String hash;
+
+        // 备注
+        private String remark;
+
+        // 账单类型
+        private int billType; // uint8 in Go, using int in Java
+
+        public String getTransactionId() {
+            return transactionId;
+        }
+
+        public void setTransactionId(String transactionId) {
+            this.transactionId = transactionId;
+        }
+
+        public long getTransactTime() {
+            return transactTime;
+        }
+
+        public void setTransactTime(long transactTime) {
+            this.transactTime = transactTime;
+        }
+
+        public String getPayChannel() {
+            return payChannel;
+        }
+
+        public void setPayChannel(String payChannel) {
+            this.payChannel = payChannel;
+        }
+
+        public String getStatus() {
+            return status;
+        }
+
+        public void setStatus(String status) {
+            this.status = status;
+        }
+
+        public String getAmount() {
+            return amount;
+        }
+
+        public void setAmount(String amount) {
+            this.amount = amount;
+        }
+
+        public String getCurrency() {
+            return currency;
+        }
+
+        public void setCurrency(String currency) {
+            this.currency = currency;
+        }
+
+        public String getChain() {
+            return chain;
+        }
+
+        public void setChain(String chain) {
+            this.chain = chain;
+        }
+
+        public String getAddress() {
+            return address;
+        }
+
+        public void setAddress(String address) {
+            this.address = address;
+        }
+
+        public String getHash() {
+            return hash;
+        }
+
+        public void setHash(String hash) {
+            this.hash = hash;
+        }
+
+        public String getRemark() {
+            return remark;
+        }
+
+        public void setRemark(String remark) {
+            this.remark = remark;
+        }
+
+        public int getBillType() {
+            return billType;
+        }
+
+        public void setBillType(int billType) {
+            this.billType = billType;
+        }
+    }
 
     public String getRefundRequestId() {
         return refundRequestId;
@@ -418,5 +552,29 @@ public class QueryRefundRespV2 extends BaseResponse<QueryRefundRespV2> {
 
     public void setTotalReceiveCurrency(String totalReceiveCurrency) {
         this.totalReceiveCurrency = totalReceiveCurrency;
+    }
+
+    public List<RefundDetailItem> getRefundDetails() {
+        return refundDetails;
+    }
+
+    public void setRefundDetails(List<RefundDetailItem> refundDetails) {
+        this.refundDetails = refundDetails;
+    }
+
+    public String getPayChannel() {
+        return payChannel;
+    }
+
+    public void setPayChannel(String payChannel) {
+        this.payChannel = payChannel;
+    }
+
+    public int getBillType() {
+        return billType;
+    }
+
+    public void setBillType(int billType) {
+        this.billType = billType;
     }
 }

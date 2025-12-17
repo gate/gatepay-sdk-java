@@ -1,6 +1,7 @@
 package com.gatepay.core.api.payment.model.v2.req;
 
 import com.gatepay.common.BaseRequest;
+import com.gatepay.common.annotation.GatePayParam;
 import com.gatepay.common.enums.GatePayApi;
 
 /**
@@ -13,6 +14,7 @@ import com.gatepay.common.enums.GatePayApi;
 public class QueryRefundReqV2 extends BaseRequest {
 
     // 商户退款单id
+    @GatePayParam
     private String refundRequestId;
 
     public QueryRefundReqV2() {

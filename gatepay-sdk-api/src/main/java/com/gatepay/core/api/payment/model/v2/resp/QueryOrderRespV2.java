@@ -16,6 +16,7 @@ import java.util.List;
  * @Date 2025/08/26
  */
 public class QueryOrderRespV2 extends BaseResponse<QueryOrderRespV2> {
+
     private String prepayId;
     private long merchantId;
     private String merchantTradeNo;
@@ -51,6 +52,19 @@ public class QueryOrderRespV2 extends BaseResponse<QueryOrderRespV2> {
     @JsonProperty("pay_account")
     private String payAccount;
 
+    private String totalFee =  "";
+    private String returnUrl =  "";
+    private String merchantName = "";
+
+    private String location = "";
+    private String scheme = "";
+    private QueryOrderRespV2.WhiteBrandInfo whiteBrandInfo = null;
+
+
+    @JsonProperty("qrcode")
+    private String qrCode = "";
+
+
     /**
      * Web3支付相关的参数
      */
@@ -60,7 +74,11 @@ public class QueryOrderRespV2 extends BaseResponse<QueryOrderRespV2> {
 
     private String chain = "";
 
+    private String fullCurrType =  "";
+
     private String fromAddress = "";
+
+    private String showChainNameEn = "";
 
     @JsonProperty("transaction_info")
     private ChainTransactionInfo transactionInfo;
@@ -110,6 +128,36 @@ public class QueryOrderRespV2 extends BaseResponse<QueryOrderRespV2> {
 
         public void setConfirm(int confirm) {
             this.confirm = confirm;
+        }
+    }
+
+    public static class WhiteBrandInfo {
+        private String logoUrl = "";
+        private String brand = "";
+        private String[] payWays = new String[0];
+
+        public String getLogoUrl() {
+            return logoUrl;
+        }
+
+        public void setLogoUrl(String logoUrl) {
+            this.logoUrl = logoUrl;
+        }
+
+        public String getBrand() {
+            return brand;
+        }
+
+        public void setBrand(String brand) {
+            this.brand = brand;
+        }
+
+        public String[] getPayWays() {
+            return payWays;
+        }
+
+        public void setPayWays(String[] payWays) {
+            this.payWays = payWays;
         }
     }
 
@@ -170,10 +218,12 @@ public class QueryOrderRespV2 extends BaseResponse<QueryOrderRespV2> {
         this.orderAmount = orderAmount;
     }
 
+    @Override
     public String getStatus() {
         return status;
     }
 
+    @Override
     public void setStatus(String status) {
         this.status = status;
     }
@@ -320,6 +370,78 @@ public class QueryOrderRespV2 extends BaseResponse<QueryOrderRespV2> {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getTotalFee() {
+        return totalFee;
+    }
+
+    public void setTotalFee(String totalFee) {
+        this.totalFee = totalFee;
+    }
+
+    public String getReturnUrl() {
+        return returnUrl;
+    }
+
+    public void setReturnUrl(String returnUrl) {
+        this.returnUrl = returnUrl;
+    }
+
+    public String getMerchantName() {
+        return merchantName;
+    }
+
+    public void setMerchantName(String merchantName) {
+        this.merchantName = merchantName;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getScheme() {
+        return scheme;
+    }
+
+    public void setScheme(String scheme) {
+        this.scheme = scheme;
+    }
+
+    public WhiteBrandInfo getWhiteBrandInfo() {
+        return whiteBrandInfo;
+    }
+
+    public void setWhiteBrandInfo(WhiteBrandInfo whiteBrandInfo) {
+        this.whiteBrandInfo = whiteBrandInfo;
+    }
+
+    public String getQrCode() {
+        return qrCode;
+    }
+
+    public void setQrCode(String qrCode) {
+        this.qrCode = qrCode;
+    }
+
+    public String getFullCurrType() {
+        return fullCurrType;
+    }
+
+    public void setFullCurrType(String fullCurrType) {
+        this.fullCurrType = fullCurrType;
+    }
+
+    public String getShowChainNameEn() {
+        return showChainNameEn;
+    }
+
+    public void setShowChainNameEn(String showChainNameEn) {
+        this.showChainNameEn = showChainNameEn;
     }
 
     public String getChain() {

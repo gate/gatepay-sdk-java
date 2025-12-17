@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.gatepay</groupId>
         <artifactId>gatepay-sdk-java</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.7</version>
     </parent>
 
     <artifactId>gatepay-sdk-common</artifactId>

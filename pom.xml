@@ -6,7 +6,7 @@
 
     <groupId>com.gatepay</groupId>
     <artifactId>gatepay-sdk-java</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.7</version>
     <packaging>pom</packaging>
     <modules>
         <module>gatepay-sdk-api</module>
@@ -27,17 +27,17 @@
             <dependency>
                 <groupId>com.gatepay</groupId>
                 <artifactId>gatepay-sdk-common</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>1.7</version>
             </dependency>
             <dependency>
                 <groupId>com.gatepay</groupId>
                 <artifactId>gatepay-sdk-api</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>1.7</version>
             </dependency>
             <dependency>
                 <groupId>com.gatepay</groupId>
                 <artifactId>gatepay-sdk-infrastructure</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>1.7</version>
             </dependency>
 
             <!-- Jackson for JSON processing -->
