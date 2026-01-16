@@ -21,6 +21,7 @@ public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
     private String goodsName;
     private String currency;
     private String orderAmount;
+    private String surchargeAmount;
     private String status;
     private long createTime;
     private long expireTime;
@@ -361,6 +362,14 @@ public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
 
     public void setTransactionInfo(Object transactionInfo) {
         this.transactionInfo = transactionInfo;
+    }
+
+    public String getSurchargeAmount() {
+        return surchargeAmount;
+    }
+
+    public void setSurchargeAmount(String surchargeAmount) {
+        this.surchargeAmount = surchargeAmount;
     }
 
 }

@@ -33,6 +33,11 @@ public class CreateOrderReq extends BaseRequest {
     private String orderAmount;
 
     /**
+     * 用户承担手续费 非必传
+     */
+    private String surchargeAmount;
+
+    /**
      * 非地址支付的payCurrency在实际付款时确定，地址支付的payCurrency在下单时候确定
      */
     private String payCurrency;
@@ -206,4 +211,11 @@ public class CreateOrderReq extends BaseRequest {
         this.channelId = channelId;
     }
 
+    public String getSurchargeAmount() {
+        return surchargeAmount;
+    }
+
+    public void setSurchargeAmount(String surchargeAmount) {
+        this.surchargeAmount = surchargeAmount;
+    }
 }
