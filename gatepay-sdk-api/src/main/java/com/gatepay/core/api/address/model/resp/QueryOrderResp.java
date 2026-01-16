@@ -52,6 +52,12 @@ public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
     private String orderAmount;
 
     /**
+     * 用户手续费
+     */
+    private String surchargeAmount;
+
+
+    /**
      * 用户实际支付币种，非闪兑单中与订单币种一致
      */
     private String payCurrency;
@@ -279,4 +285,11 @@ public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
         this.fromAddress = fromAddress;
     }
 
+    public String getSurchargeAmount() {
+        return surchargeAmount;
+    }
+
+    public void setSurchargeAmount(String surchargeAmount) {
+        this.surchargeAmount = surchargeAmount;
+    }
 }

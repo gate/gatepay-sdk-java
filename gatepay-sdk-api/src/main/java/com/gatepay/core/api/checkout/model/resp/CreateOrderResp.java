@@ -10,6 +10,8 @@ import com.gatepay.common.model.Chain;
 public class CreateOrderResp extends BaseResponse<CreateOrderResp> {
 
     private String prepayId;
+    private String orderAmount;
+    private String surchargeAmount;
     private String terminalType;
     private long expireTime;
     private String qrContent;
@@ -118,4 +120,19 @@ public class CreateOrderResp extends BaseResponse<CreateOrderResp> {
         this.inUsdt = inUsdt;
     }
 
+    public String getOrderAmount() {
+        return orderAmount;
+    }
+
+    public void setOrderAmount(String orderAmount) {
+        this.orderAmount = orderAmount;
+    }
+
+    public String getSurchargeAmount() {
+        return surchargeAmount;
+    }
+
+    public void setSurchargeAmount(String surchargeAmount) {
+        this.surchargeAmount = surchargeAmount;
+    }
 }

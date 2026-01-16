@@ -15,6 +15,7 @@ public class CreateOrderReq extends BaseRequest {
     private EnvReq env;
     private String currency;
     private String orderAmount;
+    private String surchargeAmount;
     private String payCurrency;
     private long merchantUserId;
     private GoodsReq goods;
@@ -126,4 +127,11 @@ public class CreateOrderReq extends BaseRequest {
         this.channelId = channelId;
     }
 
+    public String getSurchargeAmount() {
+        return surchargeAmount;
+    }
+
+    public void setSurchargeAmount(String surchargeAmount) {
+        this.surchargeAmount = surchargeAmount;
+    }
 }
