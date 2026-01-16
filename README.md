@@ -2,6 +2,7 @@
 
 GatePay API官方JAVA语言客户端代码库。
 
+
 # 功能介绍
 1. GatePay JAVA SDK适用于Java 17及以上版本。
 2. 在开始使用GatePay SDK之前需要提前去GatePay注册中心注册账号，申请secretKey，密钥信息请妥善保管，如果遗失可能会造成非法用户使用此信息操作您的资源，给您造成数据和财产损失。
