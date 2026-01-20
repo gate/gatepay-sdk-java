@@ -56,6 +56,21 @@ public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
      */
     private String surchargeAmount;
 
+    /**
+     * 法币币种
+     */
+    private String fiatCurrency;
+
+    /**
+     * 法币金额
+     */
+    private String fiatAmount;
+
+    /**
+     * 订单币种到法币 的汇率
+     */
+    private String fiatRate;
+
 
     /**
      * 用户实际支付币种，非闪兑单中与订单币种一致
@@ -291,5 +306,29 @@ public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
 
     public void setSurchargeAmount(String surchargeAmount) {
         this.surchargeAmount = surchargeAmount;
+    }
+
+    public String getFiatCurrency() {
+        return fiatCurrency;
+    }
+
+    public void setFiatCurrency(String fiatCurrency) {
+        this.fiatCurrency = fiatCurrency;
+    }
+
+    public String getFiatAmount() {
+        return fiatAmount;
+    }
+
+    public void setFiatAmount(String fiatAmount) {
+        this.fiatAmount = fiatAmount;
+    }
+
+    public String getFiatRate() {
+        return fiatRate;
+    }
+
+    public void setFiatRate(String fiatRate) {
+        this.fiatRate = fiatRate;
     }
 }

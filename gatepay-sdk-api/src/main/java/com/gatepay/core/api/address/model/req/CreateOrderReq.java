@@ -38,6 +38,16 @@ public class CreateOrderReq extends BaseRequest {
     private String surchargeAmount;
 
     /**
+     * 法币币种
+     */
+    private String fiatCurrency;
+
+    /**
+     * 法币金额
+     */
+    private String fiatAmount;
+
+    /**
      * 非地址支付的payCurrency在实际付款时确定，地址支付的payCurrency在下单时候确定
      */
     private String payCurrency;
@@ -217,5 +227,21 @@ public class CreateOrderReq extends BaseRequest {
 
     public void setSurchargeAmount(String surchargeAmount) {
         this.surchargeAmount = surchargeAmount;
+    }
+
+    public String getFiatCurrency() {
+        return fiatCurrency;
+    }
+
+    public void setFiatCurrency(String fiatCurrency) {
+        this.fiatCurrency = fiatCurrency;
+    }
+
+    public String getFiatAmount() {
+        return fiatAmount;
+    }
+
+    public void setFiatAmount(String fiatAmount) {
+        this.fiatAmount = fiatAmount;
     }
 }

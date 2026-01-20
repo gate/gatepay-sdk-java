@@ -21,6 +21,8 @@ public class CreateOrderReq extends BaseRequest {
     private String merchantTradeNo;
     private String currency;
     private String orderAmount;
+    private String fiatCurrency;
+    private String fiatAmount;
     private EnvReq env;
     private GoodsReq goods;
     private String returnUrl;
@@ -79,4 +81,19 @@ public class CreateOrderReq extends BaseRequest {
         this.returnUrl = returnUrl;
     }
 
+    public String getFiatCurrency() {
+        return fiatCurrency;
+    }
+
+    public void setFiatCurrency(String fiatCurrency) {
+        this.fiatCurrency = fiatCurrency;
+    }
+
+    public String getFiatAmount() {
+        return fiatAmount;
+    }
+
+    public void setFiatAmount(String fiatAmount) {
+        this.fiatAmount = fiatAmount;
+    }
 }
