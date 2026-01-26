@@ -62,6 +62,11 @@ public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
     private String toleranceAmount;
 
     /**
+     * 支付完成后与订单金额相差的金额，剩余未付金额
+     */
+    private String underpaidAmount;
+
+    /**
      * 用户实际支付币种，非闪兑单中与订单币种一致
      */
     private String payCurrency;
@@ -303,5 +308,13 @@ public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
 
     public void setToleranceAmount(String toleranceAmount) {
         this.toleranceAmount = toleranceAmount;
+    }
+
+    public String getUnderpaidAmount() {
+        return underpaidAmount;
+    }
+
+    public void setUnderpaidAmount(String underpaidAmount) {
+        this.underpaidAmount = underpaidAmount;
     }
 }

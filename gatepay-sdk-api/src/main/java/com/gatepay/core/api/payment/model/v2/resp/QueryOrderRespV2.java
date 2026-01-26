@@ -26,6 +26,7 @@ public class QueryOrderRespV2 extends BaseResponse<QueryOrderRespV2> {
     private String orderAmount;
     private String surchargeAmount;
     private String toleranceAmount;
+    private String underpaidAmount;
     private String status;
     private long createTime;
     private long expireTime;
@@ -91,6 +92,14 @@ public class QueryOrderRespV2 extends BaseResponse<QueryOrderRespV2> {
 
     public void setToleranceAmount(String toleranceAmount) {
         this.toleranceAmount = toleranceAmount;
+    }
+
+    public String getUnderpaidAmount() {
+        return underpaidAmount;
+    }
+
+    public void setUnderpaidAmount(String underpaidAmount) {
+        this.underpaidAmount = underpaidAmount;
     }
 
     public static class ChainTransactionInfo {

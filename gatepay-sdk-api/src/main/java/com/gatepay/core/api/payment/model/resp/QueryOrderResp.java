@@ -23,6 +23,7 @@ public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
     private String orderAmount;
     private String surchargeAmount;
     private String toleranceAmount;
+    private String underpaidAmount;
     private String status;
     private long createTime;
     private long expireTime;
@@ -379,5 +380,13 @@ public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
 
     public void setToleranceAmount(String toleranceAmount) {
         this.toleranceAmount = toleranceAmount;
+    }
+
+    public String getUnderpaidAmount() {
+        return underpaidAmount;
+    }
+
+    public void setUnderpaidAmount(String underpaidAmount) {
+        this.underpaidAmount = underpaidAmount;
     }
 }
