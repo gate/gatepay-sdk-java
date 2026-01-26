@@ -25,6 +25,7 @@ public class QueryOrderRespV2 extends BaseResponse<QueryOrderRespV2> {
     private String currency;
     private String orderAmount;
     private String surchargeAmount;
+    private String toleranceAmount;
     private String status;
     private long createTime;
     private long expireTime;
@@ -83,6 +84,14 @@ public class QueryOrderRespV2 extends BaseResponse<QueryOrderRespV2> {
 
     @JsonProperty("transaction_info")
     private ChainTransactionInfo transactionInfo;
+
+    public String getToleranceAmount() {
+        return toleranceAmount;
+    }
+
+    public void setToleranceAmount(String toleranceAmount) {
+        this.toleranceAmount = toleranceAmount;
+    }
 
     public static class ChainTransactionInfo {
 

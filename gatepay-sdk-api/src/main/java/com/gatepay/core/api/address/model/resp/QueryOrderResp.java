@@ -56,6 +56,10 @@ public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
      */
     private String surchargeAmount;
 
+    /**
+     * 容差金额
+     */
+    private String toleranceAmount;
 
     /**
      * 用户实际支付币种，非闪兑单中与订单币种一致
@@ -291,5 +295,13 @@ public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
 
     public void setSurchargeAmount(String surchargeAmount) {
         this.surchargeAmount = surchargeAmount;
+    }
+
+    public String getToleranceAmount() {
+        return toleranceAmount;
+    }
+
+    public void setToleranceAmount(String toleranceAmount) {
+        this.toleranceAmount = toleranceAmount;
     }
 }
