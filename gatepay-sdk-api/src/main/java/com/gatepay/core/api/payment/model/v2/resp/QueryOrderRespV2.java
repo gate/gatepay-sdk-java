@@ -28,6 +28,8 @@ public class QueryOrderRespV2 extends BaseResponse<QueryOrderRespV2> {
     private String fiatCurrency;
     private String fiatAmount;
     private String fiatRate;
+    private String toleranceAmount;
+    private String underpaidAmount;
     private String status;
     private long createTime;
     private long expireTime;
@@ -86,6 +88,22 @@ public class QueryOrderRespV2 extends BaseResponse<QueryOrderRespV2> {
 
     @JsonProperty("transaction_info")
     private ChainTransactionInfo transactionInfo;
+
+    public String getToleranceAmount() {
+        return toleranceAmount;
+    }
+
+    public void setToleranceAmount(String toleranceAmount) {
+        this.toleranceAmount = toleranceAmount;
+    }
+
+    public String getUnderpaidAmount() {
+        return underpaidAmount;
+    }
+
+    public void setUnderpaidAmount(String underpaidAmount) {
+        this.underpaidAmount = underpaidAmount;
+    }
 
     public static class ChainTransactionInfo {
 

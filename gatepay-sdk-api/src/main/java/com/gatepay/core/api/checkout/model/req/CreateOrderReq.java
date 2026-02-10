@@ -18,6 +18,7 @@ public class CreateOrderReq extends BaseRequest {
     private String surchargeAmount;
     private String fiatCurrency;
     private String fiatAmount;
+    private String toleranceAmount;
     private String payCurrency;
     private long merchantUserId;
     private GoodsReq goods;
@@ -151,5 +152,13 @@ public class CreateOrderReq extends BaseRequest {
 
     public void setFiatAmount(String fiatAmount) {
         this.fiatAmount = fiatAmount;
+    }
+
+    public String getToleranceAmount() {
+        return toleranceAmount;
+    }
+
+    public void setToleranceAmount(String toleranceAmount) {
+        this.toleranceAmount = toleranceAmount;
     }
 }

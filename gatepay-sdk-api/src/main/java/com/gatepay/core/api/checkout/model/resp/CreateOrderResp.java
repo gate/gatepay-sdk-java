@@ -15,6 +15,7 @@ public class CreateOrderResp extends BaseResponse<CreateOrderResp> {
     private String currency;
     private String fiatCurrency;
     private String fiatAmount;
+    private String toleranceAmount;
     private String terminalType;
     private long expireTime;
     private String qrContent;
@@ -161,5 +162,13 @@ public class CreateOrderResp extends BaseResponse<CreateOrderResp> {
 
     public void setFiatAmount(String fiatAmount) {
         this.fiatAmount = fiatAmount;
+    }
+
+    public String getToleranceAmount() {
+        return toleranceAmount;
+    }
+
+    public void setToleranceAmount(String toleranceAmount) {
+        this.toleranceAmount = toleranceAmount;
     }
 }

@@ -48,6 +48,11 @@ public class CreateOrderReq extends BaseRequest {
     private String fiatAmount;
 
     /**
+     * 容差金额 非必传
+     */
+    private String toleranceAmount;
+
+    /**
      * 非地址支付的payCurrency在实际付款时确定，地址支付的payCurrency在下单时候确定
      */
     private String payCurrency;
@@ -243,5 +248,13 @@ public class CreateOrderReq extends BaseRequest {
 
     public void setFiatAmount(String fiatAmount) {
         this.fiatAmount = fiatAmount;
+    }
+
+    public String getToleranceAmount() {
+        return toleranceAmount;
+    }
+
+    public void setToleranceAmount(String toleranceAmount) {
+        this.toleranceAmount = toleranceAmount;
     }
 }
