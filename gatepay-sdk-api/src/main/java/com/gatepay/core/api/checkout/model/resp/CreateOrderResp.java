@@ -12,6 +12,9 @@ public class CreateOrderResp extends BaseResponse<CreateOrderResp> {
     private String prepayId;
     private String orderAmount;
     private String surchargeAmount;
+    private String currency;
+    private String fiatCurrency;
+    private String fiatAmount;
     private String toleranceAmount;
     private String terminalType;
     private long expireTime;
@@ -135,6 +138,30 @@ public class CreateOrderResp extends BaseResponse<CreateOrderResp> {
 
     public void setSurchargeAmount(String surchargeAmount) {
         this.surchargeAmount = surchargeAmount;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public String getFiatCurrency() {
+        return fiatCurrency;
+    }
+
+    public void setFiatCurrency(String fiatCurrency) {
+        this.fiatCurrency = fiatCurrency;
+    }
+
+    public String getFiatAmount() {
+        return fiatAmount;
+    }
+
+    public void setFiatAmount(String fiatAmount) {
+        this.fiatAmount = fiatAmount;
     }
 
     public String getToleranceAmount() {

@@ -25,6 +25,9 @@ public class QueryOrderRespV2 extends BaseResponse<QueryOrderRespV2> {
     private String currency;
     private String orderAmount;
     private String surchargeAmount;
+    private String fiatCurrency;
+    private String fiatAmount;
+    private String fiatRate;
     private String toleranceAmount;
     private String underpaidAmount;
     private String status;
@@ -492,5 +495,29 @@ public class QueryOrderRespV2 extends BaseResponse<QueryOrderRespV2> {
 
     public void setSurchargeAmount(String surchargeAmount) {
         this.surchargeAmount = surchargeAmount;
+    }
+
+    public String getFiatCurrency() {
+        return fiatCurrency;
+    }
+
+    public void setFiatCurrency(String fiatCurrency) {
+        this.fiatCurrency = fiatCurrency;
+    }
+
+    public String getFiatAmount() {
+        return fiatAmount;
+    }
+
+    public void setFiatAmount(String fiatAmount) {
+        this.fiatAmount = fiatAmount;
+    }
+
+    public String getFiatRate() {
+        return fiatRate;
+    }
+
+    public void setFiatRate(String fiatRate) {
+        this.fiatRate = fiatRate;
     }
 }

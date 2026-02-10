@@ -38,6 +38,16 @@ public class CreateOrderReq extends BaseRequest {
     private String surchargeAmount;
 
     /**
+     * 法币币种
+     */
+    private String fiatCurrency;
+
+    /**
+     * 法币金额
+     */
+    private String fiatAmount;
+
+    /**
      * 容差金额 非必传
      */
     private String toleranceAmount;
@@ -222,6 +232,22 @@ public class CreateOrderReq extends BaseRequest {
 
     public void setSurchargeAmount(String surchargeAmount) {
         this.surchargeAmount = surchargeAmount;
+    }
+
+    public String getFiatCurrency() {
+        return fiatCurrency;
+    }
+
+    public void setFiatCurrency(String fiatCurrency) {
+        this.fiatCurrency = fiatCurrency;
+    }
+
+    public String getFiatAmount() {
+        return fiatAmount;
+    }
+
+    public void setFiatAmount(String fiatAmount) {
+        this.fiatAmount = fiatAmount;
     }
 
     public String getToleranceAmount() {
